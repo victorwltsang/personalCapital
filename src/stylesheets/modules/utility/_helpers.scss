@@ -5,3 +5,29 @@
 		}
 	}
 }
+
+.tablet {
+	&--hidden {
+		@include min-tablet {
+			display: none;
+		}
+	}
+
+	&--show {
+		display: none;
+
+		@include min-tablet {
+			display: inline-block;
+		}
+	}
+}
+
+.desktop {
+	&--show {
+		display: none;
+
+		@include min-desktop {
+			display: inline-block;
+		}
+	}
+}

@@ -1,16 +1,19 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
 html,
 body {
 	font-size: 1em;
 	line-height: 1.5;
 	font-family: 'Open Sans', sans-serif;
-}
-
-html {
-	min-height: 100%;
-}
-
-* {
-	box-sizing: border-box;
+	overflow-x: hidden;
 }
 
 .container {

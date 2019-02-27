@@ -9,12 +9,28 @@
 	border-width: 2px;
 	border-color: transparent;
 
+	&--nav {
+		font-weight: 700 !important;
+		font-size: 16px;
+		padding: 6px 23px !important;
+	}
+
 	&--primary {
 		background-color: $orange;
 		color: white;
 
 		&:hover {
 			background-color: darken($orange, 10%);
+		}
+	}
+
+	&--secondary {
+		background-color: transparent;
+		color: $orange !important;
+		border: 2px solid $orange !important;
+
+		&:hover {
+			color: white !important;
 		}
 	}
 }
