@@ -1,0 +1,20 @@
+.btn {
+	display: inline-block;
+	width: auto;
+	padding: 6px 23px;
+	font-weight: bold;
+	transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
+	text-decoration: none;
+	cursor: pointer;
+	border-width: 2px;
+	border-color: transparent;
+
+	&--primary {
+		background-color: $orange;
+		color: white;
+
+		&:hover {
+			background-color: darken($orange, 10%);
+		}
+	}
+}

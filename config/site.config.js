@@ -15,7 +15,7 @@ const config = {
   site_description: 'A whole new way to manage your money',
 
   // Your website's URL, used for sitemap
-  site_url: '',
+  site_url: 'http://localhost:8000/',
 
   // Google Analytics tracking ID (leave blank to disable)
   googleAnalyticsUA: '',

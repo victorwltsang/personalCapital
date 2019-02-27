@@ -1,0 +1,7 @@
+.mobile {
+	&--hidden {
+		@include max-tablet {
+			display: none;
+		}
+	}
+}

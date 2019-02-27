@@ -1,0 +1,41 @@
+@mixin max-tablet {
+	@media (max-width: #{$tablet-width }) {
+		@content;
+	}
+}
+
+@mixin min-tablet {
+	@media (min-width: #{$tablet-width }) {
+		@content;
+	}
+}
+
+@mixin min-desktop {
+	@media (min-width: #{$desktop-width}) {
+		@content;
+	}
+}
+
+@mixin max-desktop {
+	@media (max-width: #{$desktop-width}) {
+		@content;
+	}
+}
+
+@mixin min-large {
+	@media (min-width: #{$large-width}) {
+		@content;
+	}
+}
+
+@function em($pixels, $context: $browser-context) {
+	@return #{$pixels/$context}em;
+}
+
+@mixin clear-fix {
+	&::after {
+		clear: both;
+		content: '';
+		display: block;
+	}
+}

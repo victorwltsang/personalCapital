@@ -1,0 +1,52 @@
+html,
+body {
+	font-size: 1em;
+	line-height: 1.5;
+	font-family: 'Open Sans', sans-serif;
+}
+
+html {
+	min-height: 100%;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+
+	@include min-tablet {
+		width: $tablet-width;
+	}
+
+	@include min-desktop {
+		width: $desktop-width;
+	}
+
+	@include min-large {
+		width: $large-width;
+	}
+
+	&--bg-grey {
+		background-color: $bg;
+	}
+
+	&--padding {
+		padding: 40px 20px;
+
+		@include min-tablet {
+			padding: 40px 60px;
+		}
+
+		@include min-desktop {
+			padding: 40px 80px;
+		}
+	}
+}
+
+// body * {
+// 	border: 1px solid black;
+// }
