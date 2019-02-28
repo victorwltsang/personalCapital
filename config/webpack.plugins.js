@@ -77,13 +77,35 @@ const sitemap = new SitemapPlugin(config.site_url, paths, {
   lastmodrealtime: true,
 });
 
+// Favicons
+const favicons = new WebappWebpackPlugin({
+  logo: config.favicon,
+  prefix: 'images/favicons/',
+  favicons: {
+    appName: config.site_name,
+    appDescription: config.site_description,
+    developerName: null,
+    developerURL: null,
+    icons: {
+      android: true,
+      appleIcon: true,
+      appleStartup: false,
+      coast: false,
+      favicons: true,
+      firefox: false,
+      windows: false,
+      yandex: false,
+    },
+  },
+});
+
 // Webpack bar
 const webpackBar = new WebpackBar({
   color: '#ff6469',
 });
 
 // Google analytics
-const CODE = "<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','{{ID}}','auto');ga('send','pageview');</script>";
+const CODE = '<script>(function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');ga(\'create\',\'{{ID}}\',\'auto\');ga(\'send\',\'pageview\');</script>';
 
 class GoogleAnalyticsPlugin {
   constructor({ id }) {
@@ -112,6 +134,7 @@ module.exports = [
   stylelint,
   cssExtract,
   ...generateHTMLPlugins(),
+  fs.existsSync(config.favicon) && favicons,
   config.env === 'production' && optimizeCss,
   config.env === 'production' && robots,
   config.env === 'production' && sitemap,
