@@ -77,28 +77,6 @@ const sitemap = new SitemapPlugin(config.site_url, paths, {
   lastmodrealtime: true,
 });
 
-// Favicons
-const favicons = new WebappWebpackPlugin({
-  logo: config.favicon,
-  prefix: 'images/favicon/',
-  favicons: {
-    appName: config.site_name,
-    appDescription: config.site_description,
-    developerName: null,
-    developerURL: null,
-    icons: {
-      android: true,
-      appleIcon: true,
-      appleStartup: false,
-      coast: false,
-      favicons: true,
-      firefox: false,
-      windows: false,
-      yandex: false,
-    },
-  },
-});
-
 // Webpack bar
 const webpackBar = new WebpackBar({
   color: '#ff6469',
@@ -134,7 +112,6 @@ module.exports = [
   stylelint,
   cssExtract,
   ...generateHTMLPlugins(),
-  fs.existsSync(config.favicon) && favicons,
   config.env === 'production' && optimizeCss,
   config.env === 'production' && robots,
   config.env === 'production' && sitemap,

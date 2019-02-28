@@ -47,9 +47,7 @@ const cssLoader = {
 const postcssLoader = {
   loader: 'postcss-loader',
   options: {
-    plugins: [
-      require('autoprefixer')(),
-    ],
+    plugins: [require('autoprefixer')()],
     sourceMap,
   },
 };
@@ -115,7 +113,7 @@ const imageLoader = {
 };
 
 const images = {
-  test: /\.(gif|png|jpe?g|svg)$/i,
+  test: /\.(gif|png|ico|jpe?g|svg)$/i,
   use: [
     'file-loader?name=images/[name].[ext]?[hash]',
     config.env === 'production' ? imageLoader : null,
@@ -136,12 +134,4 @@ const fonts = {
   ],
 };
 
-module.exports = [
-  html,
-  js,
-  css,
-  sass,
-  less,
-  images,
-  fonts,
-];
+module.exports = [html, js, css, sass, less, images, fonts];

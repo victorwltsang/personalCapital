@@ -15,7 +15,7 @@ const config = {
   site_description: 'A whole new way to manage money',
 
   // Your website's URL, used for sitemap
-  site_url: '',
+  site_url: 'https://personal-capital-vt.netlify.com/',
 
   // Google Analytics tracking ID (leave blank to disable)
   googleAnalyticsUA: '',
@@ -40,9 +40,7 @@ const config = {
     src: 'src',
     dist: 'dist',
   },
-  package: JSON.parse(
-    fs.readFileSync(path.join(ROOT, '/package.json'), { encoding: 'utf-8' }),
-  ),
+  package: JSON.parse(fs.readFileSync(path.join(ROOT, '/package.json'), { encoding: 'utf-8' })),
 };
 
 module.exports = config;
