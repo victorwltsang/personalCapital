@@ -80,7 +80,7 @@ const sitemap = new SitemapPlugin(config.site_url, paths, {
 // Favicons
 const favicons = new WebappWebpackPlugin({
   logo: config.favicon,
-  prefix: 'images/favicons/',
+  prefix: 'images/favicon/',
   favicons: {
     appName: config.site_name,
     appDescription: config.site_description,
@@ -105,7 +105,7 @@ const webpackBar = new WebpackBar({
 });
 
 // Google analytics
-const CODE = `<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','{{ID}}','auto');ga('send','pageview');</script>`;
+const CODE = "<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','{{ID}}','auto');ga('send','pageview');</script>";
 
 class GoogleAnalyticsPlugin {
   constructor({ id }) {
@@ -117,7 +117,7 @@ class GoogleAnalyticsPlugin {
       HTMLWebpackPlugin.getHooks(compilation).beforeEmit.tapAsync(
         'GoogleAnalyticsPlugin',
         (data, cb) => {
-          data.html = data.html.replace('</head>', `</head>${CODE.replace('{{ID}}', this.id) }`);
+          data.html = data.html.replace('</head>', `</head>${CODE.replace('{{ID}}', this.id)}`);
           cb(null, data);
         },
       );

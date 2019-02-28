@@ -12,10 +12,10 @@ const config = {
   site_name: 'Personal Capital',
 
   // Your website's description, used for favicon meta tags
-  site_description: 'A whole new way to manage your money',
+  site_description: 'A whole new way to manage money',
 
   // Your website's URL, used for sitemap
-  site_url: 'http://localhost:8000/',
+  site_url: '',
 
   // Google Analytics tracking ID (leave blank to disable)
   googleAnalyticsUA: '',

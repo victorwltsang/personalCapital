@@ -13,24 +13,24 @@ body {
 	font-size: 1em;
 	line-height: 1.5;
 	font-family: 'Open Sans', sans-serif;
-	overflow-x: hidden;
+	// overflow-x: hidden;
 }
 
 .container {
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 	margin-left: auto;
 	margin-right: auto;
 
 	@include min-tablet {
-		width: $tablet-width;
+		width: $tablet-width - 1;
 	}
 
 	@include min-desktop {
-		width: $desktop-width;
+		width: $desktop-width - 1;
 	}
 
 	@include min-large {
-		width: $large-width;
+		width: $large-width - 1;
 	}
 
 	&--bg-grey {

@@ -1,6 +1,8 @@
 // Add your scripts here
+import $ from 'jquery';
+
 $(document).ready(() => {
-  $('.nav__hamburger').click(function () {
+  $('.nav__hamburger').click(() => {
     $(this).toggleClass('open');
     $('.nav__list--mobile').toggleClass('open');
     if ($(window).width() > 768) {
