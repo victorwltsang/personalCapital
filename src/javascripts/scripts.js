@@ -1,24 +1,22 @@
-// Add your scripts here
-import $ from 'jquery';
+const hamburger = document.querySelector('.nav__hamburger');
+const mobileMenu = document.querySelector('.nav__list--mobile');
+const showTabletLinks = document.querySelectorAll('.tablet--show');
 
-$(document).ready(() => {
-  $('.nav__hamburger').click(() => {
-    $(this).toggleClass('open');
-    $('.nav__list--mobile').toggleClass('open');
-    if ($(window).width() > 768) {
-      $('.tablet--show ').toggle();
-    }
-  });
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+  if (window.innerWidth > 768) {
+    showTabletLinks.forEach((link, i) => {
+      showTabletLinks[i].classList.toggle('hide');
+    });
+  }
+});
 
-  $(window).on('resize', () => {
-    if ($(window).width() > 1024 && $('.nav__list--mobile').hasClass('open')) {
-      $('.tablet--show').toggle();
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 1024) {
+    if (mobileMenu.classList.contains('open')) {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
     }
-    if ($(window).width() > 1024) {
-      if ($('.nav__list--mobile').hasClass('open')) {
-        $('.nav__list--mobile').toggleClass('open');
-        $('.nav__hamburger').toggleClass('open');
-      }
-    }
-  });
+  }
 });
