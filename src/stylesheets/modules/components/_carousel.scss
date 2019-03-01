@@ -102,7 +102,7 @@
 		h2 {
 			font-size: em(24);
 			color: #8e959b;
-			font-weight: 100 !important;
+			font-weight: 100;
 			margin-bottom: 12px;
 			text-align: center;
 
@@ -139,7 +139,7 @@
 		@include min-tablet {
 			display: block;
 			font-size: em(22);
-			font-weight: 700px;
+			font-weight: 700;
 			margin-bottom: 24px;
 			text-transform: uppercase;
 
